@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 ## Training
 
-### Step 1 — Generate reasoning traces (SFT warm-up)
+### Step 1 — Generate reasoning traces
 
 ```bash
 python train/generate_reasoning.py \
@@ -33,7 +33,7 @@ python train/generate_reasoning.py \
   --output reasoning_traces_humor.jsonl
 ```
 
-### Step 2 — SFT on distilled reasoning traces
+### Step 2 — SFT on distilled reasoning traces (SFT warm-up)
 
 Per-task CoT SFT:
 ```bash
@@ -43,7 +43,7 @@ python train/sft.py --task metaphor  --mode cot --reasoning-file reasoning_trace
 python train/sft.py --task offensive --mode cot --reasoning-file reasoning_traces_offensive.jsonl
 ```
 
-Combined CoT SFT (all 4 tasks, 5K samples each):
+Combined CoT SFT:
 ```bash
 python train/sft_combined.py \
   --sarcasm-reasoning-file reasoning_traces_sarcasm.jsonl \
