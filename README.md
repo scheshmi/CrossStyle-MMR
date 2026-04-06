@@ -115,6 +115,7 @@ python infer/gemini.py --task sarcasm --use-cot
 
 
 ## Citation
+If you use or build upon this work, please cite:
 
 ```bibtex
 @inproceedings{cheshmi-etal-2026-reasoning,
