@@ -56,10 +56,8 @@ python train/sft_combined.py \
 
 Single task:
 ```bash
-python train/grpo.py --task sarcasm
-python train/grpo.py --task humor   --weighted-reward --sft-style humor
-python train/grpo.py --task metaphor --weighted-reward --sft-style combined
-python train/grpo.py --task offensive --weighted-reward --sft-style combined
+python train/grpo.py --task sarcasm --sft-style sarcasm
+python train/grpo.py --task metaphor --sft-style combined
 ```
 
 Multi-task (combined):
@@ -96,7 +94,7 @@ python infer/binary.py \
   --model-path ./qwen2.5-vl-3b-humor-binary-merged
 ```
 
-### vLLM baseline (LLaVA, Phi-4, LLaMA, Qwen-32B, etc.)
+### vLLM baselines
 
 ```bash
 python infer/vllm_baseline.py \
@@ -119,11 +117,8 @@ python infer/gemini.py --task sarcasm --use-cot
 ```bibtex
 @inproceedings{cheshmi-etal-2026-reasoning,
     title = "Reasoning Beyond Literal: Cross-style Multimodal Reasoning for Figurative Language Understanding",
-    author = "Cheshmi, Seyyed Saeid  and
-      Ortiz, Hahnemann  and Mooney, James  and Kang, Dongyeop",
-    editor = "Demberg, Vera  and
-      Inui, Kentaro  and
-      Marquez, Llu{\'i}s",
+    author = "Cheshmi, Seyyed Saeid  and Ortiz, Hahnemann  and Mooney, James  and Kang, Dongyeop",
+    editor = "Demberg, Vera  and Inui, Kentaro  and Marquez, Llu{\'i}s",
     booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {EACL} 2026",
     month = mar,
     year = "2026",
